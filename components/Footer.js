@@ -74,25 +74,25 @@ const Footer = () => {
           </div>
 
           <div className="lg:flex justify-between mb-[50px]">
-            <div class="lg:w-[424px]  ml-0 w-full mb-10 lg:mb-0">
-              <h1 class="text-[18] font-500 text-[#2F2F2F] mb-5">About Us</h1>
-              <p class="text-[#9A9A9A] text-[15px] w-[247px] leading-[28px]">
+            <div className="lg:w-[424px]  ml-0 w-full mb-10 lg:mb-0">
+              <h1 className="text-[18] font-500 text-[#2F2F2F] mb-5">About Us</h1>
+              <p className="text-[#9A9A9A] text-[15px] w-[247px] leading-[28px]">
                 We know there are a lot of threa developers our but we pride
                 into a firm in the industry.
               </p>
             </div>
-            <div class="flex-1 lg:flex">
-              <div class="lg:w-1/3 w-full mb-10 lg:mb-0">
-                <div class="mb-5">
-                  <h6 class="text-[18] font-500 text-[#2F2F2F]">Feature</h6>
+            <div className="flex-1 lg:flex">
+              <div className="lg:w-1/3 w-full mb-10 lg:mb-0">
+                <div className="mb-5">
+                  <h6 className="text-[18] font-500 text-[#2F2F2F]">Feature</h6>
                 </div>
                 <div>
-                  <ul class="flex flex-col space-y-4">
+                  <ul className="flex flex-col space-y-4">
                     {links.slice(0, 3).map((link) => {
                       return (
                         <li key={link.title}>
                           <a href={link.href}>
-                            <span class="text-[#9A9A9A] text-[15px] hover:text-black border-b border-transparent hover:border-black cursor-pointer capitalize">
+                            <span className="text-[#9A9A9A] text-[15px] hover:text-black border-b border-transparent hover:border-black cursor-pointer capitalize">
                               {link?.title}
                             </span>
                           </a>
@@ -102,20 +102,20 @@ const Footer = () => {
                   </ul>
                 </div>
               </div>
-              <div class="lg:w-1/3 lg:flex lg:flex-col items-center w-full mb-10 lg:mb-0 ">
+              <div className="lg:w-1/3 lg:flex lg:flex-col items-center w-full mb-10 lg:mb-0 ">
                 <div>
-                  <div class="mb-5">
-                    <h6 class="text-[18] font-500 text-[#2F2F2F]">
+                  <div className="mb-5">
+                    <h6 className="text-[18] font-500 text-[#2F2F2F]">
                       General Links
                     </h6>
                   </div>
                   <div>
-                    <ul class="flex flex-col space-y-4">
+                    <ul className="flex flex-col space-y-4">
                       {links.slice(3, 6).map((link) => {
                         return (
                           <li key={link.title}>
                             <a href={link.href}>
-                              <span class="text-[#9A9A9A] text-[15px] hover:text-black border-b border-transparent hover:border-black cursor-pointer capitalize">
+                              <span className="text-[#9A9A9A] text-[15px] hover:text-black border-b border-transparent hover:border-black cursor-pointer capitalize">
                                 {link?.title}
                               </span>
                             </a>
@@ -126,18 +126,18 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
-              <div class="lg:w-1/3 lg:flex lg:flex-col items-center w-full mb-10 lg:mb-0">
+              <div className="lg:w-1/3 lg:flex lg:flex-col items-center w-full mb-10 lg:mb-0">
                 <div>
-                  <div class="mb-5">
-                    <h6 class="text-[18] font-500 text-[#2F2F2F]">Helpful</h6>
+                  <div className="mb-5">
+                    <h6 className="text-[18] font-500 text-[#2F2F2F]">Helpful</h6>
                   </div>
                   <div>
-                    <ul class="flex flex-col space-y-4">
+                    <ul className="flex flex-col space-y-4">
                       {links.slice(6, 9).map((link) => {
                         return (
                           <li key={link.title}>
                             <a href={link.href}>
-                              <span class="text-[#9A9A9A] text-[15px] hover:text-black border-b border-transparent hover:border-black cursor-pointer capitalize">
+                              <span className="text-[#9A9A9A] text-[15px] hover:text-black border-b border-transparent hover:border-black cursor-pointer capitalize">
                                 {link?.title}
                               </span>
                             </a>
