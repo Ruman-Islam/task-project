@@ -12,6 +12,9 @@ export default function Home() {
   const [shopName, setShopName] = useState("");
   const [shopAddress, setShopAddress] = useState("");
   const [password, setPassword] = useState("");
+  const [data, setData] = useState();
+  const [showModal, setShowModal] = useState(false);
+  console.log(data)
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -74,7 +77,8 @@ export default function Home() {
                         .then((res) => res.json())
                         .then((result) => {
                           // do something here show modal
-                          console.log(result);
+                          setShowModal(true);
+                          setData(result);
                         });
                     }
                   });
@@ -490,6 +494,17 @@ export default function Home() {
             </form>
           </div>
         </div>
+        {showModal ? (
+          <div className="flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 mx-auto h-56 my-auto flex-col max-w-md gap-2 p-6 rounded-md shadow-md bg-[#e3eafe]">
+            <button
+              onClick={() => setShowModal(false)}
+              className="btn btn-sm btn-circle absolute right-6 top-5 "
+            >
+              ✕
+            </button>
+            
+          </div>
+        ) : null}
       </div>
     </Layout>
   );

@@ -14,7 +14,7 @@ const Navbar = () => {
   };  
   return (
     <div>
-      <div className={`bg-white text-sm text-black max-w-[1168px] ${styles.navContainer}`}>
+      <div className={`px-2 md:px-0 bg-white text-sm text-black max-w-[1168px] ${styles.navContainer}`}>
         <div className="md:flex items-center mx-auto container justify-center md:justify-between py-2">
           <div className="flex items-center gap-x-5">
             <span>Account</span>
