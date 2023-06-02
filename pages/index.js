@@ -8,10 +8,10 @@ export default function Home() {
             <div className="flex xl:flex-row flex-col-reverse xl:space-x-11">
               <div className="xl:w-[824px]">
                 <div className="title w-full mb-4">
-                  <h1 className="text-[22px] font-semibold text-qblack mb-1">
+                  <h1 className="text-[22px] font-semibold mb-1">
                     Seller Information
                   </h1>
-                  <p className="text-[15px] text-qgraytwo">
+                  <p className="text-[15px]">
                     Fill the form below or write us .We will help you as soon as
                     possible.
                   </p>
@@ -25,7 +25,7 @@ export default function Home() {
                       >
                         First Name*
                       </label>
-                      <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+                      <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative">
                         <input
                           placeholder="Demo Name"
                           className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full font-normal bg-white focus:ring-0 focus:outline-none h-[50px]"
@@ -42,7 +42,7 @@ export default function Home() {
                       >
                         Last Name*
                       </label>
-                      <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+                      <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative">
                         <input
                           placeholder="Demo Name"
                           className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full font-normal bg-white focus:ring-0 focus:outline-none h-[50px]"
@@ -92,9 +92,7 @@ export default function Home() {
                       Country*
                     </h6>
                     <div className="w-full h-[50px] border border-[#EDEDED] px-5 flex justify-between items-center mb-2">
-                      <span className="text-[13px] text-qgraytwo">
-                        Select Country
-                      </span>
+                      <span className="text-[13px]">Select Country</span>
                       <span>
                         <svg
                           width="11"
@@ -131,10 +129,10 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="title w-full mb-4">
-                  <h1 className="text-[22px] font-semibold text-qblack mb-1">
+                  <h1 className="text-[22px] font-semibold mb-1">
                     Shop Information
                   </h1>
-                  <p className="text-[15px] text-qgraytwo">
+                  <p className="text-[15px]">
                     Fill the form below or write us .We will help you as soon as
                     possible.
                   </p>
@@ -213,9 +211,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex-1 mb-10 xl:mb-0">
-                {/* Azhar */}
-              </div>
+              <div className="flex-1 mb-10 xl:mb-0">{/* Azhar */}</div>
             </div>
           </div>
         </div>

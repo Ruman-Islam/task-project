@@ -139,7 +139,7 @@ const Nav = () => {
     <div className="bg-[#ffbb38]">
       <div className={`navbar px-0  ${styles.navContainer}`}>
         <div className="navbar-start">
-          <div className="dropdown">
+          <div className="dropdown relative z-50">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
