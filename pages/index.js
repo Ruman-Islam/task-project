@@ -66,7 +66,7 @@ export default function Home() {
                   .then((imgData) => {
                     if (imgData.success) {
                       post.shopCoverURL = imgData?.data?.url;
-                      fetch(`https://task-project-six.vercel.app/api/user`, {
+                      fetch(`https://task-project-wine.vercel.app/api/user`, {
                         method: "POST",
                         headers: {
                           "content-type": "application/json",
