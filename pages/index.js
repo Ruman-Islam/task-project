@@ -45,7 +45,7 @@ export default function Home() {
       // shopLogoURL: url,
       // shopCoverURL: url,
     };
-    
+
     // fetch(url, {
     //   method: "POST",
     //   body: formData,
@@ -340,8 +340,11 @@ export default function Home() {
                         alt=""
                         className="sm:w-[198px] sm:h-[198px] w-[199px] h-[199px] rounded-full overflow-hidden object-cover"
                       />
-                      <input type="file" className="hidden" />
-                      <div className="w-[32px] h-[32px] absolute bottom-7 sm:right-0 right-[105px]  hover:bg-[#F539F8] bg-[#F539F8] rounded-full cursor-pointer">
+                      <input type="file" className="hidden" id="photo-url" />
+                      <label
+                        htmlFor="photo-url"
+                        className="w-[32px] h-[32px] absolute bottom-7 sm:right-0 right-[105px]  hover:bg-[#F539F8] bg-[#F539F8] rounded-full cursor-pointer"
+                      >
                         <svg
                           width="32"
                           height="32"
@@ -358,7 +361,7 @@ export default function Home() {
                             fill="white"
                           ></path>
                         </svg>
-                      </div>
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -393,8 +396,15 @@ export default function Home() {
                         alt=""
                         className="sm:w-[198px] sm:h-[198px] w-[199px] h-[199px] rounded-full overflow-hidden object-cover"
                       />
-                      <input type="file" className="hidden" />
-                      <div className="w-[32px] h-[32px] absolute bottom-7 sm:right-0 right-[105px]  hover:bg-[#F539F8] bg-[#F539F8] rounded-full cursor-pointer">
+                      <input
+                        type="file"
+                        className="hidden"
+                        id="shop-logo-url"
+                      />
+                      <label
+                        htmlFor="shop-logo-url"
+                        className="w-[32px] h-[32px] absolute bottom-7 sm:right-0 right-[105px]  hover:bg-[#F539F8] bg-[#F539F8] rounded-full cursor-pointer"
+                      >
                         <svg
                           width="32"
                           height="32"
@@ -411,7 +421,7 @@ export default function Home() {
                             fill="white"
                           ></path>
                         </svg>
-                      </div>
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -445,8 +455,15 @@ export default function Home() {
                         alt=""
                         className=" w-full h-[120px] rounded-lg overflow-hidden object-cover"
                       />
-                      <input type="file" className="hidden" />
-                      <div className="w-[32px] h-[32px] absolute -bottom-4 right-4 bg-[#F539F8] hover:bg-[#F539F8] rounded-full cursor-pointer">
+                      <input
+                        type="file"
+                        className="hidden"
+                        id="shop-cover-url"
+                      />
+                      <label
+                        htmlFor="shop-cover-url"
+                        className="w-[32px] h-[32px] absolute -bottom-4 right-4 bg-[#F539F8] hover:bg-[#F539F8] rounded-full cursor-pointer"
+                      >
                         <svg
                           width="32"
                           height="32"
@@ -463,7 +480,7 @@ export default function Home() {
                             fill="white"
                           ></path>
                         </svg>
-                      </div>
+                      </label>
                     </div>
                   </div>
                 </div>
