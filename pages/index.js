@@ -14,8 +14,10 @@ export default function Home() {
   const [password, setPassword] = useState("");
   const [data, setData] = useState();
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (event) => {
+    setLoading(true);
     event.preventDefault();
     const form = event.target;
     const profileImage = form?.photoUrl?.files[0];
@@ -78,6 +80,7 @@ export default function Home() {
                           // do something here show modal
                           setShowModal(true);
                           setData(result);
+                          setLoading(false);
                         });
                     }
                   });
@@ -326,7 +329,9 @@ export default function Home() {
                       type="submit"
                       className="btn-primary bg-black text-sm text-white w-[490px] h-[50px] font-semibold flex justify-center bg-purple items-center"
                     >
-                      <span>Create Seller Account</span>
+                      <span>
+                        {loading ? "Loading..." : "Create Seller Account"}
+                      </span>
                     </button>
                   </div>
                 </div>
