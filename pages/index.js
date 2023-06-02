@@ -3,6 +3,9 @@ import Layout from "@/components/Layout";
 import { useState } from "react";
 
 export default function Home() {
+  const [showModal, setShowModal] = useState(false);
+  const [data, setData] = useState({});
+  const [loading, setLoading] = useState(false);
   const [fName, setFname] = useState("");
   const [lName, setLname] = useState("");
   const [email, setEmail] = useState("");
@@ -12,18 +15,57 @@ export default function Home() {
   const [shopName, setShopName] = useState("");
   const [shopAddress, setShopAddress] = useState("");
   const [password, setPassword] = useState("");
-  const [data, setData] = useState();
-  const [showModal, setShowModal] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [profileImg, setProfileImg] = useState("");
+  const [shopLogo, setShopLogo] = useState("");
+  const [shopCover, setShopCover] = useState("");
 
-  const handleSubmit = (event) => {
-    setLoading(true);
-    event.preventDefault();
-    const form = event.target;
+  const handleAvatar = (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+
+    if (e.target.id === "photoUrl") {
+      reader.onload = () => {
+        setProfileImg(reader.result);
+      };
+    } else if (e.target.id === "shopLogoUrl") {
+      reader.onload = () => {
+        setShopLogo(reader.result);
+      };
+    } else {
+      reader.onload = () => {
+        setShopCover(reader.result);
+      };
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (
+      fName === "" ||
+      lName === "" ||
+      email === "" ||
+      phone === "" ||
+      country === "" ||
+      address === "" ||
+      shopName === "" ||
+      shopAddress === "" ||
+      password === "" ||
+      profileImg === "" ||
+      shopLogo === "" ||
+      shopCover === ""
+    ) {
+      return alert("Field missing");
+    }
+
+    const form = e.target;
     const profileImage = form?.photoUrl?.files[0];
     const logoImage = form?.shopLogoUrl.files[0];
     const coverImage = form.shopCoverUrl.files[0];
-
+    
     const formData1 = new FormData();
     const formData2 = new FormData();
     const formData3 = new FormData();
@@ -31,7 +73,7 @@ export default function Home() {
     formData2.append("image", logoImage);
     formData3.append("image", coverImage);
     const url = `https://api.imgbb.com/1/upload?key=0fd253a0ab31ae997654689deba2da86`;
-
+    
     const post = {
       firstName: fName,
       lastName: lName,
@@ -43,7 +85,8 @@ export default function Home() {
       shopName: shopName,
       shopAddress: shopAddress,
     };
-
+    
+    setLoading(true);
     fetch(url, {
       method: "POST",
       body: formData1,
@@ -77,7 +120,6 @@ export default function Home() {
                       })
                         .then((res) => res.json())
                         .then((result) => {
-                          // do something here show modal
                           setShowModal(true);
                           setData(result);
                           setLoading(false);
@@ -373,11 +415,20 @@ export default function Home() {
                   <div className="flex xl:justify-center justify-start">
                     <div className="relative">
                       <img
-                        src="https://i.ibb.co/ySTzYv4/edit-profileimg.jpg"
+                        src={
+                          profileImg
+                            ? profileImg
+                            : "https://i.ibb.co/ySTzYv4/edit-profileimg.jpg"
+                        }
                         alt=""
                         className="sm:w-[198px] sm:h-[198px] w-[199px] h-[199px] rounded-full overflow-hidden object-cover"
                       />
-                      <input type="file" className="hidden" id="photoUrl" />
+                      <input
+                        type="file"
+                        className="hidden"
+                        id="photoUrl"
+                        onChange={handleAvatar}
+                      />
                       <label
                         htmlFor="photoUrl"
                         className="w-[32px] h-[32px] absolute bottom-7 sm:right-0 right-[105px]  hover:bg-[#F539F8] bg-[#F539F8] rounded-full cursor-pointer"
@@ -429,11 +480,20 @@ export default function Home() {
                   <div className="flex xl:justify-center justify-start">
                     <div className="relative">
                       <img
-                        src="https://i.ibb.co/P6VDt4q/edit-logoimg.jpg"
+                        src={
+                          shopLogo
+                            ? shopLogo
+                            : "https://i.ibb.co/P6VDt4q/edit-logoimg.jpg"
+                        }
                         alt=""
                         className="sm:w-[198px] sm:h-[198px] w-[199px] h-[199px] rounded-full overflow-hidden object-cover"
                       />
-                      <input type="file" className="hidden" id="shopLogoUrl" />
+                      <input
+                        type="file"
+                        className="hidden"
+                        id="shopLogoUrl"
+                        onChange={handleAvatar}
+                      />
                       <label
                         htmlFor="shopLogoUrl"
                         className="w-[32px] h-[32px] absolute bottom-7 sm:right-0 right-[105px]  hover:bg-[#F539F8] bg-[#F539F8] rounded-full cursor-pointer"
@@ -484,11 +544,20 @@ export default function Home() {
                   <div className="flex justify-center">
                     <div className="w-full relative">
                       <img
-                        src="https://i.ibb.co/KyQ7ggm/edit-coverimg.jpg"
+                        src={
+                          shopCover
+                            ? shopCover
+                            : "https://i.ibb.co/KyQ7ggm/edit-coverimg.jpg"
+                        }
                         alt=""
                         className=" w-full h-[120px] rounded-lg overflow-hidden object-cover"
                       />
-                      <input type="file" className="hidden" id="shopCoverUrl" />
+                      <input
+                        type="file"
+                        className="hidden"
+                        id="shopCoverUrl"
+                        onChange={handleAvatar}
+                      />
                       <label
                         htmlFor="shopCoverUrl"
                         className="w-[32px] h-[32px] absolute -bottom-4 right-4 bg-[#F539F8] hover:bg-[#F539F8] rounded-full cursor-pointer"
