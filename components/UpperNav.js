@@ -9,13 +9,13 @@ import user from '../assets/user.svg'
 import styles from '@/styles/navbar.module.css'
 const UpperNav = () => {
     return (
-        <div className={`flex items-center justify-between py-8  px-4 ${styles.uppernavCon} ${styles.navContainer}`}>
+        <div className={`flex items-center justify-between py-6 ${styles.uppernavCon} ${styles.navContainer}`}>
             <div>
                 <Link href={"/"}><Image src={logo} alt='logo of the page' width={151} height={36} /></Link>
             </div>
-            <div className={styles.formController}>
+            <div className={`${styles.formController} border min-w-[518px]`}>
                 <input type='text' placeholder='Search Product...'/>
-                <select name="cars" id="cars">
+                <select className='border-l text-gray-400' name="cars" id="cars">
                     <option defaultValue="volvo">All Categories</option>
                 </select>
                 <button>Search</button>
@@ -30,8 +30,8 @@ const UpperNav = () => {
                     <span>1</span>
                 </div>
                 <div>
-                    <Image src={lock} alt='refrsh image' width={20} height={20} />
-                    <span>15</span>
+                    <Image src={lock} alt='refrsh image' width={18} height={18} />
+                    <span>1</span>
                 </div>
                 <div>
                     <Image src={user} alt='refrsh image' width={20} height={20} />

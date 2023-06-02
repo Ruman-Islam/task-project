@@ -6,15 +6,15 @@
 .iconContainer{
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 0 20px;
 }
 
-.iconContainer div{
+.iconContainer > div {
     position: relative;
 }   
-.iconContainer div span {
+.iconContainer > div > span {
     position: absolute;
-    top: -15px;
+    top: -12px;
     right: -8px;
     font-size: 9px;
     width: 18px;
@@ -29,14 +29,12 @@
 
 .formController input, .formController select{
     outline: none;
-    border: none;
     font-size: .75rem;
     font-weight: 500;
     height:41px;
     line-height: 1rem;
     padding-left: 1.25rem;
     width: 100%;
-    border: .016rem solid gray;
 }   
 
 .formController button{

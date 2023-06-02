@@ -137,7 +137,7 @@ const Nav = ({ toggleNavDrawer }) => {
   );
   return (
     <div className="bg-[#ffbb38]">
-      <div className={`navbar px-8 py-2  ${styles.navContainer}`}>
+      <div className={`navbar px-0  ${styles.navContainer}`}>
         <div className="navbar-start">
           <div className="dropdown">
             <label onClick={toggleNavDrawer} tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -164,7 +164,7 @@ const Nav = ({ toggleNavDrawer }) => {
             </ul>
           </div>
           <div className={`${styles.categoryContainer}`}>
-            <button onClick={() => handleCat()} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[52px] rounded">
+            <button onClick={() => handleCat()} className="flex justify-between items-center p-2 bg-white w-[270px] h-[52px] rounded">
               <div className="flex gap-3 items-center">
                 <AiOutlineBars />
                 <span>All Categories</span>
@@ -175,7 +175,7 @@ const Nav = ({ toggleNavDrawer }) => {
             <div className={`${styles.listContainer} ${openMenu ? styles.active : ''}`}>
               <ul>
                 <li>
-                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                     <div className="flex gap-3 items-center">
                       <Image src={game} alt="img" width={12} height={16} />
                       <span className="text-[12px]">Mobile & Laptops</span>
@@ -184,7 +184,7 @@ const Nav = ({ toggleNavDrawer }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                     <div className="flex gap-3 items-center">
                       <Image src={game} alt="img" width={12} height={16} />
                       <span className="text-[12px]">Gaming Entertainment</span>
@@ -193,7 +193,7 @@ const Nav = ({ toggleNavDrawer }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                     <div className="flex gap-3 items-center">
                       <Image src={game} alt="img" width={12} height={16} />
                       <span className="text-[12px]">Image & Video</span>
@@ -201,7 +201,7 @@ const Nav = ({ toggleNavDrawer }) => {
                     <IoIosArrowForward />
                   </Link>
                 </li><li>
-                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                     <div className="flex gap-3 items-center">
                       <Image src={game} alt="img" width={12} height={16} />
                       <span className="text-[12px]">Vehicles</span>
@@ -210,7 +210,7 @@ const Nav = ({ toggleNavDrawer }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                     <div className="flex gap-3 items-center">
                       <Image src={game} alt="img" width={12} height={16} />
                       <span className="text-[12px]">Furnitures</span>
@@ -219,7 +219,7 @@ const Nav = ({ toggleNavDrawer }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                     <div className="flex gap-3 items-center">
                       <Image src={game} alt="img" width={12} height={16} />
                       <span className="text-[12px]">Sport</span>
@@ -228,7 +228,7 @@ const Nav = ({ toggleNavDrawer }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                     <div className="flex gap-3 items-center">
                       <Image src={game} alt="img" width={12} height={16} />
                       <span className="text-[12px]">Food & Drinks</span>
@@ -237,7 +237,7 @@ const Nav = ({ toggleNavDrawer }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                     <div className="flex gap-3 items-center">
                       <Image src={game} alt="img" width={12} height={16} />
                       <span className="text-[12px]">Fashion Accessories</span>
@@ -246,7 +246,7 @@ const Nav = ({ toggleNavDrawer }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                     <div className="flex gap-3 items-center">
                       <Image src={game} alt="img" width={12} height={16} />
                       <span className="text-[12px]">Toilet & Sanitation</span>
@@ -255,7 +255,7 @@ const Nav = ({ toggleNavDrawer }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                     <div className="flex gap-3 items-center">
                       <Image src={game} alt="img" width={12} height={16} />
                       <span className="text-[12px]">Makeup Corner</span>
@@ -264,7 +264,7 @@ const Nav = ({ toggleNavDrawer }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                     <div className="flex gap-3 items-center">
                       <Image src={game} alt="img" width={12} height={16} />
                       <span className="text-[12px]">Baby Items</span>
