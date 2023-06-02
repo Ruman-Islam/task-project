@@ -50,6 +50,7 @@ const Footer = () => {
                 name="email"
                 className="w-full h-full focus:outline-none text-sm placeholder:text-xs placeholder:text-black text-black font-400 tracking-wider"
                 placeholder="EMAIL ADDRESS"
+                autoComplete="off"
               />
             </div>
             <button
