@@ -6,21 +6,22 @@ import MobilDrawer from "./MobilDrawer";
 import { useState } from "react";
 import UpperNav from "./UpperNav";
 import styles  from '@/styles/navbar.module.css'
+import MobileView from "./MobileView";
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const toggleNavDrawer = () => {
     setIsNavOpen((prevState) => !prevState);
-  };
+  };  
   return (
     <div>
-      <div className={`px-8 bg-white text-black w-[1168px] ${styles.navContainer}`}>
-        <div className="flex items-center mx-auto container justify-center md:justify-between py-2">
+      <div className={`px-8 bg-white text-black max-w-[1168px] ${styles.navContainer}`}>
+        <div className="md:flex items-center mx-auto container justify-center md:justify-between py-2">
           <div className="flex items-center gap-2">
             <span>Account</span>
             <span>Track Order</span>
             <span>Support</span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="items-center gap-2 hidden md:flex">
             <div className="dropdown dropdown-bottom dropdown-end">
               <label
                 tabIndex={0}
@@ -92,11 +93,13 @@ const Navbar = () => {
         </div>
       </div>
       <hr /> 
-      <UpperNav/>
-      <Nav toggleNavDrawer={toggleNavDrawer} />
-      <MobilDrawer isNavOpen={isNavOpen} toggleNavDrawer={toggleNavDrawer} />
+      <MobileView isNavOpen={isNavOpen}  toggleNavDrawer={toggleNavDrawer}/>
+      <UpperNav />
+      <Nav />
+      <MobilDrawer isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen}  toggleNavDrawer={toggleNavDrawer}/>
     </div>
   );
 };
 
 export default Navbar;
+ 

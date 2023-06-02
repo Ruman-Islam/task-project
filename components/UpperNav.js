@@ -9,11 +9,11 @@ import user from '../assets/user.svg'
 import styles from '@/styles/navbar.module.css'
 const UpperNav = () => {
     return (
-        <div className={`flex items-center justify-between py-8  px-4 ${styles.uppernavCon} ${styles.navContainer}`}>
+        <div className={`hidden lg:flex items-center justify-between py-8  px-4 ${styles.uppernavCon} ${styles.navContainer}`}>
             <div>
-                <Link href={"/"}><Image src={logo} alt='logo of the page' width={151} height={36} /></Link>
+                <Link  href={"/"}><Image src={logo} alt='logo of the page' width={151} height={36} /></Link>
             </div>
-            <div className={styles.formController}>
+            <div className={`${styles.formController}`}>
                 <input type='text' placeholder='Search Product...'/>
                 <select name="cars" id="cars">
                     <option defaultValue="volvo">All Categories</option>
