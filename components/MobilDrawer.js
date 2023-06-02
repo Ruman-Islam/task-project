@@ -1,5 +1,6 @@
+'use client'
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import refresh from '../assets/refresh.svg'
@@ -9,9 +10,19 @@ import game from '../assets/game.svg'
 import { ImCross } from 'react-icons/im'
 import { IoIosArrowForward } from 'react-icons/io';
 import Link from 'next/link';
-const MobilDrawer = ({ isNavOpen, toggleNavDrawer,setIsNavOpen }) => {
-  const handleDrawer = ()  =>{
+const MobilDrawer = ({ isNavOpen, toggleNavDrawer, setIsNavOpen }) => {
+  const [cat, setCat] = useState(true)
+  const [menu, setMenu] = useState(false)
+  const handleDrawer = () => {
     setIsNavOpen((prevState) => !prevState);
+  }
+  const handleCat = () => {
+    setCat(true)
+    setMenu(false)
+  }
+  const handleMenu = () => {
+    setCat(false)
+    setMenu(true)
   }
   return (
     <Drawer
@@ -46,113 +57,165 @@ const MobilDrawer = ({ isNavOpen, toggleNavDrawer,setIsNavOpen }) => {
           <button>Search</button>
         </div>
         <div className='flex justify-between items-center py-2 px-8'>
-          <h2>Category</h2>
+          <h2 onClick={() => handleCat()}>Category</h2>
           |
-          <h2>Main Menu</h2>
+          <h2 onClick={() => handleMenu()}>Main Menu</h2>
         </div>
+        {
+          <div className={`${styles.listContainer} ${styles.active} ${cat ? 'block' : 'hidden'}`}>
+            <ul>
+              <li>
+                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <div className="flex gap-3 items-center">
+                    <Image src={game} alt="img" width={12} height={16} />
+                    <span className="text-[12px]">Mobile & Laptops</span>
+                  </div>
+                  <IoIosArrowForward />
+                </Link>
+              </li>
+              <li>
+                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <div className="flex gap-3 items-center">
+                    <Image src={game} alt="img" width={12} height={16} />
+                    <span className="text-[12px]">Gaming Entertainment</span>
+                  </div>
+                  <IoIosArrowForward />
+                </Link>
+              </li>
+              <li>
+                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <div className="flex gap-3 items-center">
+                    <Image src={game} alt="img" width={12} height={16} />
+                    <span className="text-[12px]">Image & Video</span>
+                  </div>
+                  <IoIosArrowForward />
+                </Link>
+              </li><li>
+                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <div className="flex gap-3 items-center">
+                    <Image src={game} alt="img" width={12} height={16} />
+                    <span className="text-[12px]">Vehicles</span>
+                  </div>
+                  <IoIosArrowForward />
+                </Link>
+              </li>
+              <li>
+                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <div className="flex gap-3 items-center">
+                    <Image src={game} alt="img" width={12} height={16} />
+                    <span className="text-[12px]">Furnitures</span>
+                  </div>
+                  <IoIosArrowForward />
+                </Link>
+              </li>
+              <li>
+                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <div className="flex gap-3 items-center">
+                    <Image src={game} alt="img" width={12} height={16} />
+                    <span className="text-[12px]">Sport</span>
+                  </div>
+                  <IoIosArrowForward />
+                </Link>
+              </li>
+              <li>
+                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <div className="flex gap-3 items-center">
+                    <Image src={game} alt="img" width={12} height={16} />
+                    <span className="text-[12px]">Food & Drinks</span>
+                  </div>
+                  <IoIosArrowForward />
+                </Link>
+              </li>
+              <li>
+                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <div className="flex gap-3 items-center">
+                    <Image src={game} alt="img" width={12} height={16} />
+                    <span className="text-[12px]">Fashion Accessories</span>
+                  </div>
+                  <IoIosArrowForward />
+                </Link>
+              </li>
+              <li>
+                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <div className="flex gap-3 items-center">
+                    <Image src={game} alt="img" width={12} height={16} />
+                    <span className="text-[12px]">Toilet & Sanitation</span>
+                  </div>
+                  <IoIosArrowForward />
+                </Link>
+              </li>
+              <li>
+                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <div className="flex gap-3 items-center">
+                    <Image src={game} alt="img" width={12} height={16} />
+                    <span className="text-[12px]">Makeup Corner</span>
+                  </div>
+                  <IoIosArrowForward />
+                </Link>
+              </li>
+              <li>
+                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                  <div className="flex gap-3 items-center">
+                    <Image src={game} alt="img" width={12} height={16} />
+                    <span className="text-[12px]">Baby Items</span>
+                  </div>
+                  <IoIosArrowForward />
+                </Link>
+              </li>
+            </ul>
+          </div>
+        }
 
-        <div className={`${styles.listContainer} ${styles.active}`}>
-          <ul>
-            <li>
-              <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
-                <div className="flex gap-3 items-center">
-                  <Image src={game} alt="img" width={12} height={16} />
-                  <span className="text-[12px]">Mobile & Laptops</span>
+        {
+          <div className={`${menu ? 'block' : 'hidden'} ${styles.menuContainer}`}>
+            <ul>
+              <li>
+                <div>
+                  <Link href={"/"}>Home</Link>
+                  <IoIosArrowForward />
                 </div>
-                <IoIosArrowForward />
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
-                <div className="flex gap-3 items-center">
-                  <Image src={game} alt="img" width={12} height={16} />
-                  <span className="text-[12px]">Gaming Entertainment</span>
+                <ul>
+                  <li><Link href="/">Home One</Link> <IoIosArrowForward /></li>
+                  <li><Link href="/">Home Two</Link> <IoIosArrowForward /></li>
+                  <li><Link href="/">Home Three</Link> <IoIosArrowForward /></li>
+                  <li><Link href="/">Home Four</Link> <IoIosArrowForward /></li>
+                </ul>
+              </li>
+              <li>
+                <div>
+                  <Link href={"/"}>Shop</Link>
+                  <IoIosArrowForward />
                 </div>
-                <IoIosArrowForward />
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
-                <div className="flex gap-3 items-center">
-                  <Image src={game} alt="img" width={12} height={16} />
-                  <span className="text-[12px]">Image & Video</span>
+              </li>
+              <li><Link href={"/"}>Pages</Link>
+                <ul>
+                  <li><Link href="/">Privacy Policy</Link> <IoIosArrowForward /></li>
+                  <li><Link href="/">FAQ</Link> <IoIosArrowForward /></li>
+                  <li><Link href="/">Terms & Condition</Link> <IoIosArrowForward /></li>
+                </ul>
+              </li>
+              <li>
+                <div>
+                  <Link href={"/"}>About</Link>
+                  <IoIosArrowForward />
                 </div>
-                <IoIosArrowForward />
-              </Link>
-            </li><li>
-              <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
-                <div className="flex gap-3 items-center">
-                  <Image src={game} alt="img" width={12} height={16} />
-                  <span className="text-[12px]">Vehicles</span>
+              </li>
+              <li>
+                <div>
+                  <Link href={"/"}>Blog</Link>
+                  <IoIosArrowForward />
                 </div>
-                <IoIosArrowForward />
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
-                <div className="flex gap-3 items-center">
-                  <Image src={game} alt="img" width={12} height={16} />
-                  <span className="text-[12px]">Furnitures</span>
+              </li>
+              <li>
+                <div>
+                  <Link href={"/"}>Contact</Link>
+                  <IoIosArrowForward />
                 </div>
-                <IoIosArrowForward />
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
-                <div className="flex gap-3 items-center">
-                  <Image src={game} alt="img" width={12} height={16} />
-                  <span className="text-[12px]">Sport</span>
-                </div>
-                <IoIosArrowForward />
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
-                <div className="flex gap-3 items-center">
-                  <Image src={game} alt="img" width={12} height={16} />
-                  <span className="text-[12px]">Food & Drinks</span>
-                </div>
-                <IoIosArrowForward />
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
-                <div className="flex gap-3 items-center">
-                  <Image src={game} alt="img" width={12} height={16} />
-                  <span className="text-[12px]">Fashion Accessories</span>
-                </div>
-                <IoIosArrowForward />
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
-                <div className="flex gap-3 items-center">
-                  <Image src={game} alt="img" width={12} height={16} />
-                  <span className="text-[12px]">Toilet & Sanitation</span>
-                </div>
-                <IoIosArrowForward />
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
-                <div className="flex gap-3 items-center">
-                  <Image src={game} alt="img" width={12} height={16} />
-                  <span className="text-[12px]">Makeup Corner</span>
-                </div>
-                <IoIosArrowForward />
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
-                <div className="flex gap-3 items-center">
-                  <Image src={game} alt="img" width={12} height={16} />
-                  <span className="text-[12px]">Baby Items</span>
-                </div>
-                <IoIosArrowForward />
-              </Link>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+
+          </div>
+        }
       </div>
 
     </Drawer>

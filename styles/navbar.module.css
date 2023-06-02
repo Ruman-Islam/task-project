@@ -133,3 +133,26 @@
     align-items: center;
     gap: 5px;
 }
+
+.menuContainer{
+    padding: 1rem;
+}
+.menuContainer ul li {
+    padding: .5rem 0;
+}
+.menuContainer li a{
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+}
+.menuContainer ul li ul li{
+    margin-left: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menuContainer  ul li div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
