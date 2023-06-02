@@ -7,7 +7,7 @@ import logo from '../assets/logo.svg'
 import Link from 'next/link';
 const MobileView = ({toggleNavDrawer}) => {
     return (
-        <div className='lg:hidden flex items-center justify-between'>
+        <div className='lg:hidden flex items-center justify-between mt-4 px-2'>
             <AiOutlineBars onClick={toggleNavDrawer}/>
             <Link href={"/"}><Image src={logo} alt='logo of the page' width={151} height={36} /></Link>
             <div className={styles.iconContainer}>
