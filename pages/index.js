@@ -15,16 +15,17 @@ export default function Home() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const form = event.target
+    const form = event.target;
     const profileImage = form?.photoUrl?.files[0];
     const logoImage = form?.shopLogoUrl.files[0];
     const coverImage = form.shopCoverUrl.files[0];
-    // const image1 = profileImage;
-    // const image2 = logoImage;
-    // const image3 = coverImage;
-    
-    const formData = new FormData();
-    formData.append("image", profileImage, logoImage, coverImage);
+
+    const formData1 = new FormData();
+    const formData2 = new FormData();
+    const formData3 = new FormData();
+    formData1.append("image", profileImage);
+    formData2.append("image", logoImage);
+    formData3.append("image", coverImage);
     const url = `https://api.imgbb.com/1/upload?key=0fd253a0ab31ae997654689deba2da86`;
 
     const post = {
@@ -37,35 +38,48 @@ export default function Home() {
       password: password,
       shopName: shopName,
       shopAddress: shopAddress,
-      // photoURL: url,
-      // shopLogoURL: url,
-      // shopCoverURL: url,
     };
 
     fetch(url, {
       method: "POST",
-      body: formData,
+      body: formData1,
     })
       .then((res) => res.json())
       .then((imgData) => {
-        console.log(imgData)
         if (imgData.success) {
-          console.log(imgData)
-          // (post.photoURL = imgData),
-          //   (post.shopLogoURL = imgData),
-          //   (post.shopCoverURL = imgData),
-          //   fetch(`https://server.vercel.app/addProduct`, {
-          //     method: "POST",
-          //     headers: {
-          //       "content-type": "application/json",
-          //     },
-          //     body: JSON.stringify(post),
-          //   })
-          //     .then((res) => res.json())
-          //     .then((result) => {
-          //       // do something here show modal
-          //       console.log(result);
-          //     });
+          post.photoURL = imgData?.data?.url;
+          fetch(url, {
+            method: "POST",
+            body: formData2,
+          })
+            .then((res) => res.json())
+            .then((imgData) => {
+              if (imgData.success) {
+                post.shopLogoURL = imgData?.data?.url;
+                fetch(url, {
+                  method: "POST",
+                  body: formData3,
+                })
+                  .then((res) => res.json())
+                  .then((imgData) => {
+                    if (imgData.success) {
+                      post.shopCoverURL = imgData?.data?.url;
+                      fetch(`http://localhost:3000/api/user`, {
+                        method: "POST",
+                        headers: {
+                          "content-type": "application/json",
+                        },
+                        body: JSON.stringify(post),
+                      })
+                        .then((res) => res.json())
+                        .then((result) => {
+                          // do something here show modal
+                          console.log(result);
+                        });
+                    }
+                  });
+              }
+            });
         }
       });
   };
@@ -392,11 +406,7 @@ export default function Home() {
                         alt=""
                         className="sm:w-[198px] sm:h-[198px] w-[199px] h-[199px] rounded-full overflow-hidden object-cover"
                       />
-                      <input
-                        type="file"
-                        className="hidden"
-                        id="shopLogoUrl"
-                      />
+                      <input type="file" className="hidden" id="shopLogoUrl" />
                       <label
                         htmlFor="shopLogoUrl"
                         className="w-[32px] h-[32px] absolute bottom-7 sm:right-0 right-[105px]  hover:bg-[#F539F8] bg-[#F539F8] rounded-full cursor-pointer"
@@ -451,11 +461,7 @@ export default function Home() {
                         alt=""
                         className=" w-full h-[120px] rounded-lg overflow-hidden object-cover"
                       />
-                      <input
-                        type="file"
-                        className="hidden"
-                        id="shopCoverUrl"
-                      />
+                      <input type="file" className="hidden" id="shopCoverUrl" />
                       <label
                         htmlFor="shopCoverUrl"
                         className="w-[32px] h-[32px] absolute -bottom-4 right-4 bg-[#F539F8] hover:bg-[#F539F8] rounded-full cursor-pointer"
