@@ -12,24 +12,20 @@ export default function Home() {
   const [shopName, setShopName] = useState("");
   const [shopAddress, setShopAddress] = useState("");
   const [password, setPassword] = useState("");
-  const [photoURL, setPhotoURL] = useState(null);
-  const [shopLogoURL, setShopLogoURL] = useState(null);
-  const [shopCoverURL, setShopCoverURL] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    const profileImage = form.profile_img.files[0];
-    const logoImage = form.logo_img.files[0];
-    const coverImage = form.cover_img.files[0];
-
+    const form = event.target
+    const profileImage = form?.photoUrl?.files[0];
+    const logoImage = form?.shopLogoUrl.files[0];
+    const coverImage = form.shopCoverUrl.files[0];
     // const image1 = profileImage;
     // const image2 = logoImage;
     // const image3 = coverImage;
-
-    // const formData = new FormData();
-    // formData.append("images", image1, image2, image3);
-    // const url = `https://api.imgbb.com/1/upload?key=0fd253a0ab31ae997654689deba2da86`;
+    
+    const formData = new FormData();
+    formData.append("image", profileImage, logoImage, coverImage);
+    const url = `https://api.imgbb.com/1/upload?key=0fd253a0ab31ae997654689deba2da86`;
 
     const post = {
       firstName: fName,
@@ -46,32 +42,32 @@ export default function Home() {
       // shopCoverURL: url,
     };
 
-    // fetch(url, {
-    //   method: "POST",
-    //   body: formData,
-    // })
-    //   .then((res) => res.json())
-
-    //   .then((imgData) => {
-    //     console.log(imgData);
-    //     if (imgData.success) {
-    //       (post.photoURL = imgData),
-    //         (post.shopLogoURL = imgData),
-    //         (post.shopCoverURL = imgData),
-    //         fetch(`https://server.vercel.app/addProduct`, {
-    //           method: "POST",
-    //           headers: {
-    //             "content-type": "application/json",
-    //           },
-    //           body: JSON.stringify(post),
-    //         })
-    //           .then((res) => res.json())
-    //           .then((result) => {
-    //             // do something here show modal
-    //             console.log(result);
-    //           });
-    //     }
-    //   });
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((imgData) => {
+        console.log(imgData)
+        if (imgData.success) {
+          console.log(imgData)
+          // (post.photoURL = imgData),
+          //   (post.shopLogoURL = imgData),
+          //   (post.shopCoverURL = imgData),
+          //   fetch(`https://server.vercel.app/addProduct`, {
+          //     method: "POST",
+          //     headers: {
+          //       "content-type": "application/json",
+          //     },
+          //     body: JSON.stringify(post),
+          //   })
+          //     .then((res) => res.json())
+          //     .then((result) => {
+          //       // do something here show modal
+          //       console.log(result);
+          //     });
+        }
+      });
   };
 
   return (
@@ -340,9 +336,9 @@ export default function Home() {
                         alt=""
                         className="sm:w-[198px] sm:h-[198px] w-[199px] h-[199px] rounded-full overflow-hidden object-cover"
                       />
-                      <input type="file" className="hidden" id="photo-url" />
+                      <input type="file" className="hidden" id="photoUrl" />
                       <label
-                        htmlFor="photo-url"
+                        htmlFor="photoUrl"
                         className="w-[32px] h-[32px] absolute bottom-7 sm:right-0 right-[105px]  hover:bg-[#F539F8] bg-[#F539F8] rounded-full cursor-pointer"
                       >
                         <svg
@@ -399,10 +395,10 @@ export default function Home() {
                       <input
                         type="file"
                         className="hidden"
-                        id="shop-logo-url"
+                        id="shopLogoUrl"
                       />
                       <label
-                        htmlFor="shop-logo-url"
+                        htmlFor="shopLogoUrl"
                         className="w-[32px] h-[32px] absolute bottom-7 sm:right-0 right-[105px]  hover:bg-[#F539F8] bg-[#F539F8] rounded-full cursor-pointer"
                       >
                         <svg
@@ -458,10 +454,10 @@ export default function Home() {
                       <input
                         type="file"
                         className="hidden"
-                        id="shop-cover-url"
+                        id="shopCoverUrl"
                       />
                       <label
-                        htmlFor="shop-cover-url"
+                        htmlFor="shopCoverUrl"
                         className="w-[32px] h-[32px] absolute -bottom-4 right-4 bg-[#F539F8] hover:bg-[#F539F8] rounded-full cursor-pointer"
                       >
                         <svg
