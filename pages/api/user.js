@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     country: post.country,
     address: post.address,
     password: post.password,
-    role: post.role,
+    role: "seller",
     photoURL: post.photoURL,
   });
 
