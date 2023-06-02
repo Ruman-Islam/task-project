@@ -87,7 +87,7 @@ export default function Home() {
   return (
     <Layout title="Seller">
       <div className="w-full mb-10">
-        <div className="w-[1168px] mx-auto">
+        <div className="max-w-[1168px] p-2 md:p-0 mx-auto">
           <div className="w-full bg-white py-4">
             <form
               className="flex xl:flex-row flex-col-reverse xl:space-x-11"

@@ -65,7 +65,7 @@ const MobilDrawer = ({ isNavOpen, toggleNavDrawer, setIsNavOpen }) => {
           <div className={`${styles.listContainer} ${styles.active} ${cat ? 'block' : 'hidden'}`}>
             <ul>
               <li>
-                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                   <div className="flex gap-3 items-center">
                     <Image src={game} alt="img" width={12} height={16} />
                     <span className="text-[12px]">Mobile & Laptops</span>
@@ -74,7 +74,7 @@ const MobilDrawer = ({ isNavOpen, toggleNavDrawer, setIsNavOpen }) => {
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                   <div className="flex gap-3 items-center">
                     <Image src={game} alt="img" width={12} height={16} />
                     <span className="text-[12px]">Gaming Entertainment</span>
@@ -83,7 +83,7 @@ const MobilDrawer = ({ isNavOpen, toggleNavDrawer, setIsNavOpen }) => {
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                   <div className="flex gap-3 items-center">
                     <Image src={game} alt="img" width={12} height={16} />
                     <span className="text-[12px]">Image & Video</span>
@@ -91,7 +91,7 @@ const MobilDrawer = ({ isNavOpen, toggleNavDrawer, setIsNavOpen }) => {
                   <IoIosArrowForward />
                 </Link>
               </li><li>
-                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                   <div className="flex gap-3 items-center">
                     <Image src={game} alt="img" width={12} height={16} />
                     <span className="text-[12px]">Vehicles</span>
@@ -100,7 +100,7 @@ const MobilDrawer = ({ isNavOpen, toggleNavDrawer, setIsNavOpen }) => {
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                   <div className="flex gap-3 items-center">
                     <Image src={game} alt="img" width={12} height={16} />
                     <span className="text-[12px]">Furnitures</span>
@@ -109,7 +109,7 @@ const MobilDrawer = ({ isNavOpen, toggleNavDrawer, setIsNavOpen }) => {
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                   <div className="flex gap-3 items-center">
                     <Image src={game} alt="img" width={12} height={16} />
                     <span className="text-[12px]">Sport</span>
@@ -118,7 +118,7 @@ const MobilDrawer = ({ isNavOpen, toggleNavDrawer, setIsNavOpen }) => {
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                   <div className="flex gap-3 items-center">
                     <Image src={game} alt="img" width={12} height={16} />
                     <span className="text-[12px]">Food & Drinks</span>
@@ -127,7 +127,7 @@ const MobilDrawer = ({ isNavOpen, toggleNavDrawer, setIsNavOpen }) => {
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                   <div className="flex gap-3 items-center">
                     <Image src={game} alt="img" width={12} height={16} />
                     <span className="text-[12px]">Fashion Accessories</span>
@@ -136,7 +136,7 @@ const MobilDrawer = ({ isNavOpen, toggleNavDrawer, setIsNavOpen }) => {
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                   <div className="flex gap-3 items-center">
                     <Image src={game} alt="img" width={12} height={16} />
                     <span className="text-[12px]">Toilet & Sanitation</span>
@@ -145,7 +145,7 @@ const MobilDrawer = ({ isNavOpen, toggleNavDrawer, setIsNavOpen }) => {
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                   <div className="flex gap-3 items-center">
                     <Image src={game} alt="img" width={12} height={16} />
                     <span className="text-[12px]">Makeup Corner</span>
@@ -154,7 +154,7 @@ const MobilDrawer = ({ isNavOpen, toggleNavDrawer, setIsNavOpen }) => {
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                <Link href={"/"} className="flex justify-between items-center p-2 bg-white w-[270px] h-[40px]">
                   <div className="flex gap-3 items-center">
                     <Image src={game} alt="img" width={12} height={16} />
                     <span className="text-[12px]">Baby Items</span>

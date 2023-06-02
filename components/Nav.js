@@ -43,7 +43,7 @@ const Nav = () => {
           <IoIosArrowDown />
         </Link>
         <ul className="p-2 bg-base-100 rounded-none relative ">
-          <div className="bg-white shadow grid grid-cols-4 w-[1168px] absolute top-1 left-[-40vw]">
+          <div className="bg-white shadow grid grid-cols-4 w-[1168px] absolute top-1 left-[-27.5vw] z-50">
             <div>
               <h2>Shop List</h2>
               <li>
@@ -136,10 +136,10 @@ const Nav = () => {
     </>
   );
   return (
-    <div className="bg-[#ffbb38]">
-      <div className={`navbar px-0  ${styles.navContainer}`}>
+    <div className="bg-[#ffbb38] hidden lg:block">
+      <div className={`navbar p-0 py-2  ${styles.navContainer}`}>
         <div className="navbar-start">
-          <div className="dropdown relative z-50">
+          <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
