@@ -1,10 +1,19 @@
 import Link from "next/link";
-import React from "react";
-import { IoIosArrowDown } from "react-icons/io";
-import logo from "../assets/logo.svg";
+import React, { useState } from "react";
+import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
+import { AiOutlineBars } from 'react-icons/ai'
 import Image from "next/image";
 import menuThum from "../assets/mega-menu-thumb.jpg";
+import styles from '@/styles/navbar.module.css'
+import game from '../assets/game.svg'
 const Nav = ({ toggleNavDrawer }) => {
+  const [openMenu, setOpenMenu] = useState(false)
+
+
+  const handleCat = () => {
+    setOpenMenu(!openMenu)
+  }
+
   const menuList = (
     <>
       <li tabIndex={0}>
@@ -34,7 +43,7 @@ const Nav = ({ toggleNavDrawer }) => {
           <IoIosArrowDown />
         </Link>
         <ul className="p-2 bg-base-100 rounded-none relative ">
-          <div className="bg-white shadow grid grid-cols-4 w-[90vw] absolute top-0 left-[-40vw]">
+          <div className="bg-white shadow grid grid-cols-4 w-[1168px] absolute top-1 left-[-40vw]">
             <div>
               <h2>Shop List</h2>
               <li>
@@ -85,7 +94,7 @@ const Nav = ({ toggleNavDrawer }) => {
                 src={menuThum}
                 alt="mennu thumm"
                 width={500}
-                height={400}
+                height={500}
               />
             </div>
           </div>
@@ -127,8 +136,8 @@ const Nav = ({ toggleNavDrawer }) => {
     </>
   );
   return (
-    <>
-      <div className="navbar px-8 py-2 bg-[#ffbb38]">
+    <div className="bg-[#ffbb38]">
+      <div className={`navbar px-8 py-2  ${styles.navContainer}`}>
         <div className="navbar-start">
           <div className="dropdown">
             <label onClick={toggleNavDrawer} tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -154,25 +163,130 @@ const Nav = ({ toggleNavDrawer }) => {
               {menuList}
             </ul>
           </div>
-          <Link href={"#"}>
-            <Image
-              src={logo}
-              alt="this is logo of the website"
-              width={150}
-              height={36}
-            />
-          </Link>
+          <div className={`${styles.categoryContainer}`}>
+            <button onClick={() => handleCat()} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[52px] rounded">
+              <div className="flex gap-3 items-center">
+                <AiOutlineBars />
+                <span>All Categories</span>
+              </div>
+              <IoIosArrowDown />
+
+            </button>
+            <div className={`${styles.listContainer} ${openMenu ? styles.active : ''}`}>
+              <ul>
+                <li>
+                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                    <div className="flex gap-3 items-center">
+                      <Image src={game} alt="img" width={12} height={16} />
+                      <span className="text-[12px]">Mobile & Laptops</span>
+                    </div>
+                    <IoIosArrowForward />
+                  </Link>
+                </li>
+                <li>
+                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                    <div className="flex gap-3 items-center">
+                      <Image src={game} alt="img" width={12} height={16} />
+                      <span className="text-[12px]">Gaming Entertainment</span>
+                    </div>
+                    <IoIosArrowForward />
+                  </Link>
+                </li>
+                <li>
+                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                    <div className="flex gap-3 items-center">
+                      <Image src={game} alt="img" width={12} height={16} />
+                      <span className="text-[12px]">Image & Video</span>
+                    </div>
+                    <IoIosArrowForward />
+                  </Link>
+                </li><li>
+                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                    <div className="flex gap-3 items-center">
+                      <Image src={game} alt="img" width={12} height={16} />
+                      <span className="text-[12px]">Vehicles</span>
+                    </div>
+                    <IoIosArrowForward />
+                  </Link>
+                </li>
+                <li>
+                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                    <div className="flex gap-3 items-center">
+                      <Image src={game} alt="img" width={12} height={16} />
+                      <span className="text-[12px]">Furnitures</span>
+                    </div>
+                    <IoIosArrowForward />
+                  </Link>
+                </li>
+                <li>
+                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                    <div className="flex gap-3 items-center">
+                      <Image src={game} alt="img" width={12} height={16} />
+                      <span className="text-[12px]">Sport</span>
+                    </div>
+                    <IoIosArrowForward />
+                  </Link>
+                </li>
+                <li>
+                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                    <div className="flex gap-3 items-center">
+                      <Image src={game} alt="img" width={12} height={16} />
+                      <span className="text-[12px]">Food & Drinks</span>
+                    </div>
+                    <IoIosArrowForward />
+                  </Link>
+                </li>
+                <li>
+                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                    <div className="flex gap-3 items-center">
+                      <Image src={game} alt="img" width={12} height={16} />
+                      <span className="text-[12px]">Fashion Accessories</span>
+                    </div>
+                    <IoIosArrowForward />
+                  </Link>
+                </li>
+                <li>
+                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                    <div className="flex gap-3 items-center">
+                      <Image src={game} alt="img" width={12} height={16} />
+                      <span className="text-[12px]">Toilet & Sanitation</span>
+                    </div>
+                    <IoIosArrowForward />
+                  </Link>
+                </li>
+                <li>
+                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                    <div className="flex gap-3 items-center">
+                      <Image src={game} alt="img" width={12} height={16} />
+                      <span className="text-[12px]">Makeup Corner</span>
+                    </div>
+                    <IoIosArrowForward /> 
+                  </Link>
+                </li>
+                <li>
+                  <Link href={"/"} className="flex justify-between items-center flex p-2 bg-white w-[270px] h-[40px]">
+                    <div className="flex gap-3 items-center">
+                      <Image src={game} alt="img" width={12} height={16} />
+                      <span className="text-[12px]">Baby Items</span>
+                    </div>
+                    <IoIosArrowForward /> 
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{menuList}</ul>
         </div>
         <div className="navbar-end">
-          <Link href={"#"} className="btn">
-            Became a Seller{" "}
+          <Link href={"#"} className={styles.sellerBtn}>
+           <span> Became a Seller</span>
+            <IoIosArrowForward/> 
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

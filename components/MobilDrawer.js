@@ -13,7 +13,7 @@ const MobilDrawer = ({ isNavOpen, toggleNavDrawer }) => {
         lockBackgroundScroll
         size={300}
       >
-      
+      <h1>This is our drawer</h1>
       </Drawer>
     );
 };

@@ -4,14 +4,16 @@ import unitedLogo from "../assets/united.png";
 import Nav from "./Nav";
 import MobilDrawer from "./MobilDrawer";
 import { useState } from "react";
+import UpperNav from "./UpperNav";
+import styles  from '@/styles/navbar.module.css'
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const toggleNavDrawer = () => {
     setIsNavOpen((prevState) => !prevState);
   };
   return (
-    <>
-      <div className="px-8 bg-white text-black">
+    <div>
+      <div className={`px-8 bg-white text-black w-[1168px] ${styles.navContainer}`}>
         <div className="flex items-center mx-auto container justify-center md:justify-between py-2">
           <div className="flex items-center gap-2">
             <span>Account</span>
@@ -89,10 +91,11 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <hr />
+      <hr /> 
+      <UpperNav/>
       <Nav toggleNavDrawer={toggleNavDrawer} />
       <MobilDrawer isNavOpen={isNavOpen} toggleNavDrawer={toggleNavDrawer} />
-    </>
+    </div>
   );
 };
 

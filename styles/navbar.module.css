@@ -1,0 +1,135 @@
+.navContainer{
+    width: 1168px;
+    margin: 0 auto;
+}
+
+.iconContainer{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.iconContainer div{
+    position: relative;
+}   
+.iconContainer div span {
+    position: absolute;
+    top: -15px;
+    right: -8px;
+    font-size: 9px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ffbb38;
+    text-align: center;
+}   
+.formController{
+    display: flex;
+}
+
+.formController input, .formController select{
+    outline: none;
+    border: none;
+    font-size: .75rem;
+    font-weight: 500;
+    height:41px;
+    line-height: 1rem;
+    padding-left: 1.25rem;
+    width: 100%;
+    border: .016rem solid gray;
+}   
+
+.formController button{
+    font-size: 14px;
+    line-height: 1.25rem;    
+    font-weight: 600;
+    cursor: pointer;
+    background-color:#ffbb38;
+    height: 41px;
+    display: inline-block;
+    text-align: center;
+    padding: 0 1.5rem;
+    color: black;
+}
+
+
+/* main navbar deesign here  */
+
+.categoryContainer{
+    position: relative;
+}
+.categoryContainer button{
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(29, 29, 29);
+}
+
+.categoryContainer .listContainer{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all ease-in-out .3s;
+}
+
+.categoryContainer .listContainer.active{
+    max-height: 600px;
+    animation: fade ease-in-out .5s;
+}
+
+.listContainer li a{
+    transition: all ease-in-out .2s;
+}
+.listContainer li a:hover{
+    background-color:#ffbb38;   
+
+}
+
+@keyframes fade{
+    from{
+        opacity: .1;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.navContainer li a{
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(29, 29, 29);
+}
+.navContainer li ul li{
+    padding: 0;
+    margin: 0;
+}
+
+.navContainer li ul li a{
+    color: rgba(0, 0, 0,.8);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .5px;
+}
+.navContainer li ul div {
+    padding: 1rem;
+}
+.navContainer li ul h2{
+    color: rgb(34, 34, 34);
+    font-size: 13px;
+    font-weight: 700;
+    margin-left: 1rem;
+}
+
+
+.sellerBtn{
+    background-color: rgb(19, 17, 17);
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    padding:.7rem 1.5rem;
+    letter-spacing: .4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
