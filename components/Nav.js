@@ -6,7 +6,7 @@ import Image from "next/image";
 import menuThum from "../assets/mega-menu-thumb.jpg";
 import styles from '@/styles/navbar.module.css'
 import game from '../assets/game.svg'
-const Nav = ({ toggleNavDrawer }) => {
+const Nav = () => {
   const [openMenu, setOpenMenu] = useState(false)
 
 
@@ -140,7 +140,7 @@ const Nav = ({ toggleNavDrawer }) => {
       <div className={`navbar px-0  ${styles.navContainer}`}>
         <div className="navbar-start">
           <div className="dropdown">
-            <label onClick={toggleNavDrawer} tabIndex={0} className="btn btn-ghost lg:hidden">
+            <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"

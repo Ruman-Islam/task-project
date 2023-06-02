@@ -11,9 +11,9 @@ const UpperNav = () => {
     return (
         <div className={`flex items-center justify-between py-6 ${styles.uppernavCon} ${styles.navContainer}`}>
             <div>
-                <Link href={"/"}><Image src={logo} alt='logo of the page' width={151} height={36} /></Link>
+                <Link  href={"/"}><Image src={logo} alt='logo of the page' width={151} height={36} /></Link>
             </div>
-            <div className={`${styles.formController} border min-w-[518px]`}>
+            <div className={`${styles.formController} border min-w-[517px]`}>
                 <input type='text' placeholder='Search Product...'/>
                 <select className='border-l text-gray-400' name="cars" id="cars">
                     <option defaultValue="volvo">All Categories</option>

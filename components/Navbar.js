@@ -5,12 +5,13 @@ import Nav from "./Nav";
 import MobilDrawer from "./MobilDrawer";
 import { useState } from "react";
 import UpperNav from "./UpperNav";
-import styles from "@/styles/navbar.module.css";
+import styles  from '@/styles/navbar.module.css'
+
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const toggleNavDrawer = () => {
     setIsNavOpen((prevState) => !prevState);
-  };
+  };  
   return (
     <div>
       <div
@@ -28,7 +29,7 @@ const Navbar = () => {
               <a href="#">Support</a>
             </span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="items-center gap-2 hidden md:flex">
             <div className="dropdown dropdown-bottom dropdown-end">
               <label
                 tabIndex={0}
@@ -108,3 +109,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+ 
