@@ -14,7 +14,6 @@ export default function Home() {
   const [password, setPassword] = useState("");
   const [data, setData] = useState();
   const [showModal, setShowModal] = useState(false);
-  console.log(data)
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -67,7 +66,7 @@ export default function Home() {
                   .then((imgData) => {
                     if (imgData.success) {
                       post.shopCoverURL = imgData?.data?.url;
-                      fetch(`http://localhost:3000/api/user`, {
+                      fetch(`https://task-project-six.vercel.app/api/user`, {
                         method: "POST",
                         headers: {
                           "content-type": "application/json",
@@ -91,6 +90,25 @@ export default function Home() {
   return (
     <Layout title="Seller">
       <div className="w-full mb-10">
+        <div className="page-title-wrapper bg-[#FFFAEF] w-full h-[173px] py-10">
+          <div className="max-w-[1168px] mx-auto">
+            <div className="mb-5">
+              <div className="breadcrumb-wrapper font-400 text-[13px] text-qblack mb-[23px]">
+                <span>
+                  <span className="mx-1 capitalize">home /</span>
+                </span>
+                <span>
+                  <span className="mx-1 capitalize">Become a Seller</span>
+                </span>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <h1 className="text-3xl font-semibold text-qblack">
+                Seller Application
+              </h1>
+            </div>
+          </div>
+        </div>
         <div className="max-w-[1168px] p-2 md:p-0 mx-auto">
           <div className="w-full bg-white py-4">
             <form
@@ -495,14 +513,50 @@ export default function Home() {
           </div>
         </div>
         {showModal ? (
-          <div className="flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 mx-auto h-56 my-auto flex-col max-w-md gap-2 p-6 rounded-md shadow-md bg-[#e3eafe]">
+          <div className="flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 mx-auto max-h-96 my-auto flex-col max-w-md gap-2 p-6 rounded-md shadow-md font-semibold bg-[#C3E9FF]">
             <button
               onClick={() => setShowModal(false)}
               className="btn btn-sm btn-circle absolute right-6 top-5 "
             >
               ✕
             </button>
-            
+            <div>
+              <h1 className="text-2xl">This is seller information</h1> <br />
+              <div className="flex gap-x-3">
+                <div>Seller Name:</div>
+                <div>{data?.firstName + " " + data?.lastName}</div>
+              </div>{" "}
+              <br />
+              <div className="flex gap-x-3">
+                <div>Seller email:</div>
+                <div>{data?.email}</div>
+              </div>{" "}
+              <br />
+              <div className="flex gap-x-3">
+                <div>Seller Phone:</div>
+                <div>{data?.phone}</div>
+              </div>{" "}
+              <br />
+              <div className="flex gap-x-3">
+                <div>Seller country:</div>
+                <div>{data?.country}</div>
+              </div>{" "}
+              <br />
+              <div className="flex gap-x-3">
+                <div>Seller Address:</div>
+                <div>{data?.address}</div>
+              </div>{" "}
+              <br />
+              <div className="flex gap-x-3">
+                <div>Seller Shop Name:</div>
+                <div>{data?.shopName}</div>
+              </div>{" "}
+              <br />
+              <div className="flex gap-x-3">
+                <div>Seller Shop Address:</div>
+                <div>{data?.shopAddress}</div>
+              </div>
+            </div>
           </div>
         ) : null}
       </div>
