@@ -19,6 +19,12 @@ export default function Home() {
   const [shopLogo, setShopLogo] = useState("");
   const [shopCover, setShopCover] = useState("");
 
+  const onLoadImage = (callBack, reader) => {
+    reader.onload = () => {
+      callBack(reader.result);
+    };
+  };
+
   const handleAvatar = (e) => {
     const file = e.target.files[0];
     const reader = new FileReader();
@@ -27,17 +33,11 @@ export default function Home() {
     }
 
     if (e.target.id === "photoUrl") {
-      reader.onload = () => {
-        setProfileImg(reader.result);
-      };
+      onLoadImage(setProfileImg, reader);
     } else if (e.target.id === "shopLogoUrl") {
-      reader.onload = () => {
-        setShopLogo(reader.result);
-      };
+      onLoadImage(setShopLogo, reader);
     } else {
-      reader.onload = () => {
-        setShopCover(reader.result);
-      };
+      onLoadImage(setShopCover, reader);
     }
   };
 
@@ -65,7 +65,7 @@ export default function Home() {
     const profileImage = form?.photoUrl?.files[0];
     const logoImage = form?.shopLogoUrl.files[0];
     const coverImage = form.shopCoverUrl.files[0];
-    
+
     const formData1 = new FormData();
     const formData2 = new FormData();
     const formData3 = new FormData();
@@ -73,7 +73,7 @@ export default function Home() {
     formData2.append("image", logoImage);
     formData3.append("image", coverImage);
     const url = `https://api.imgbb.com/1/upload?key=0fd253a0ab31ae997654689deba2da86`;
-    
+
     const post = {
       firstName: fName,
       lastName: lName,
@@ -85,7 +85,7 @@ export default function Home() {
       shopName: shopName,
       shopAddress: shopAddress,
     };
-    
+
     setLoading(true);
     fetch(url, {
       method: "POST",
